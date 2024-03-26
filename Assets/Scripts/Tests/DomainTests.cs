@@ -12,4 +12,12 @@ public class DomainTests
         Pinball pinball = new Pinball(0);
         Assert.AreEqual(0, pinball.score);
     }
+
+    [Test]
+    public void testAddingScore()
+    {
+        Pinball pinball = new Pinball(0);
+        pinball.AddPoints(10);
+        Assert.AreEqual(10, pinball.score);
+    }
 }
