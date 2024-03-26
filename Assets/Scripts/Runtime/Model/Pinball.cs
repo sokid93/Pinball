@@ -7,7 +7,7 @@ public class Pinball
 
     public Pinball(int score)
     {
-
+        this.score = score;
     }
 
     public void AddPoints(int points)
