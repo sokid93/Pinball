@@ -12,6 +12,6 @@ public class Pinball
 
     public void AddPoints(int points)
     {
-        score = 10;
+        score += points;
     }
 }
