@@ -19,5 +19,7 @@ public class DomainTests
         Pinball pinball = new Pinball(0);
         pinball.AddPoints(10);
         Assert.AreEqual(10, pinball.score);
+        pinball.AddPoints(100);
+        Assert.AreEqual(110, pinball.score);
     }
 }
