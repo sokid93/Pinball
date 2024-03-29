@@ -33,12 +33,18 @@ public class DomainTests
         Pinball pinball = new Pinball();
         Assert.IsFalse(pinball.HasBallInPlay());
     }
-
     [Test]
     public void HasBallInPlayWhenAdded()
     {
         Pinball pinball = new Pinball();
         pinball.ReleaseBall();
         Assert.IsTrue(pinball.HasBallInPlay());
+    }
+    public void HasNoBallWhenLosesBall()
+    {
+        Pinball pinball = new Pinball();
+        pinball.ReleaseBall();
+        pinball.LoseBall();
+        Assert.IsFalse(pinball.HasBallInPlay());
     }
 }
