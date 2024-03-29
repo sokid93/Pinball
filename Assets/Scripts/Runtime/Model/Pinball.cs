@@ -4,10 +4,12 @@ using System.Collections.Generic;
 public class Pinball
 {
     int score;
+    bool hasBall = false;
 
     public Pinball()
     {
         score = 0;
+        hasBall = false;
     }
     public Pinball(int score)
     {
@@ -25,6 +27,11 @@ public class Pinball
     }
     public bool HasBallInPlay()
     {
-        return false;
+        return hasBall;
+    }
+
+    public void ReleaseBall()
+    {
+        hasBall = true;
     }
 }
