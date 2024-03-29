@@ -16,10 +16,13 @@ public class Pinball
         ballsRemaining = 1;
     }
 
-    //public Pinball(int score)
-    //{
-    //    this.score = score;
-    //}
+    public Pinball(int ballsAvailable)
+    {
+        score = 0;
+        hasBall = false;
+        isGameOver = false;
+        ballsRemaining = ballsAvailable;
+    }
 
     public void AddPoints(int points)
     {

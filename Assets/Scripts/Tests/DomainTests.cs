@@ -64,7 +64,7 @@ public class DomainTests
     [Test]
     public void NotGameOverIfHasBallsRemaining()
     {
-        Pinball pinball = new Pinball();
+        Pinball pinball = new Pinball(3);
         pinball.LoseBall();
         Assert.IsFalse(pinball.GameOver());
     }
