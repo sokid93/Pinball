@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class Pinball
 {
     int score;
+    int ballsRemaining;
     bool hasBall;
     bool isGameOver;
 
@@ -12,6 +13,7 @@ public class Pinball
         score = 0;
         hasBall = false;
         isGameOver = false;
+        ballsRemaining = 1;
     }
 
     //public Pinball(int score)
@@ -40,7 +42,9 @@ public class Pinball
     public void LoseBall()
     {
         hasBall = false;
-        isGameOver = true;
+        ballsRemaining -= 1;
+        if (ballsRemaining == 0)
+            isGameOver = true;
     }
     public bool GameOver()
     {
