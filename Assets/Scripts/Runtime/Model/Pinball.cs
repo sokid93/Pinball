@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Pinball
 {
     int score;
-    bool hasBall = false;
+    bool hasBall;
 
     public Pinball()
     {
@@ -43,4 +43,5 @@ public class Pinball
     {
         return false;
     }
+
 }
