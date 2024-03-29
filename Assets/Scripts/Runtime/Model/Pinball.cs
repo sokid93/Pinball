@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Pinball
 {
-    public int score { get; private set; }
+    int score;
 
     public Pinball()
     {
@@ -17,5 +17,10 @@ public class Pinball
     public void AddPoints(int points)
     {
         score += points;
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }

@@ -10,21 +10,21 @@ public class DomainTests
     public void testDefaultScore()
     {
         Pinball pinball = new Pinball();
-        Assert.AreEqual(0, pinball.score);
+        Assert.AreEqual(0, pinball.GetScore());
     }
     [Test]
     public void testInitiateWithNonZeroScore()
     {
         Pinball pinball = new Pinball(100);
-        Assert.AreEqual(100, pinball.score);
+        Assert.AreEqual(100, pinball.GetScore());
     }
     [Test]
     public void testAddingScore()
     {
         Pinball pinball = new Pinball(0);
         pinball.AddPoints(10);
-        Assert.AreEqual(10, pinball.score);
+        Assert.AreEqual(10, pinball.GetScore());
         pinball.AddPoints(100);
-        Assert.AreEqual(110, pinball.score);
+        Assert.AreEqual(110, pinball.GetScore());
     }
 }
