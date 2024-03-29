@@ -11,10 +11,11 @@ public class Pinball
         score = 0;
         hasBall = false;
     }
-    public Pinball(int score)
-    {
-        this.score = score;
-    }
+
+    //public Pinball(int score)
+    //{
+    //    this.score = score;
+    //}
 
     public void AddPoints(int points)
     {
