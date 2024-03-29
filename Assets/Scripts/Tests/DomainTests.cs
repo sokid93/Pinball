@@ -7,7 +7,7 @@ using UnityEngine.TestTools;
 public class DomainTests
 {
     [Test]
-    public void testDefaultScore()
+    public void DefaultScoreIsZero()
     {
         Pinball pinball = new Pinball();
         Assert.AreEqual(0, pinball.GetScore());
@@ -19,7 +19,7 @@ public class DomainTests
     //    Assert.AreEqual(100, pinball.GetScore());
     //}
     [Test]
-    public void testAddingScore()
+    public void AddScore()
     {
         Pinball pinball = new Pinball();
         pinball.AddPoints(10);
@@ -34,14 +34,14 @@ public class DomainTests
         Assert.IsFalse(pinball.HasBallInPlay());
     }
     [Test]
-    public void HasBallInPlayWhenAdded()
+    public void HasBallInPlayWhenReleased()
     {
         Pinball pinball = new Pinball();
         pinball.ReleaseBall();
         Assert.IsTrue(pinball.HasBallInPlay());
     }
     [Test]
-    public void HasNoBallWhenLosesBall()
+    public void HasNoBallInPlayWhenLosingBall()
     {
         Pinball pinball = new Pinball();
         pinball.ReleaseBall();
