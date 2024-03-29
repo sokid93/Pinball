@@ -5,11 +5,13 @@ public class Pinball
 {
     int score;
     bool hasBall;
+    bool isGameOver;
 
     public Pinball()
     {
         score = 0;
         hasBall = false;
+        isGameOver = false;
     }
 
     //public Pinball(int score)
@@ -38,10 +40,11 @@ public class Pinball
     public void LoseBall()
     {
         hasBall = false;
+        isGameOver = true;
     }
     public bool GameOver()
     {
-        return false;
+        return isGameOver;
     }
 
 }
