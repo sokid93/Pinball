@@ -39,4 +39,8 @@ public class Pinball
     {
         hasBall = false;
     }
+    public bool GameOver()
+    {
+        return false;
+    }
 }

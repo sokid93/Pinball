@@ -40,11 +40,19 @@ public class DomainTests
         pinball.ReleaseBall();
         Assert.IsTrue(pinball.HasBallInPlay());
     }
+    [Test]
     public void HasNoBallWhenLosesBall()
     {
         Pinball pinball = new Pinball();
         pinball.ReleaseBall();
         pinball.LoseBall();
         Assert.IsFalse(pinball.HasBallInPlay());
+    }
+    [Test]
+    public void NotGameOverByDefault()
+    {
+        Pinball pinball = new Pinball();
+        Assert.IsFalse(pinball.GameOver());
+
     }
 }
