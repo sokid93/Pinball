@@ -9,7 +9,7 @@ public class DomainTests
     [Test]
     public void testDefaultScore()
     {
-        Pinball pinball = new Pinball(0);
+        Pinball pinball = new Pinball();
         Assert.AreEqual(0, pinball.score);
     }
     [Test]
