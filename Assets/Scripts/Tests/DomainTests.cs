@@ -28,7 +28,7 @@ public class DomainTests
         Assert.AreEqual(110, pinball.GetScore());
     }
     [Test]
-    public void asdasdfsadf()
+    public void HasNoBallInPlayByDefault()
     {
         Pinball pinball = new Pinball();
         Assert.IsFalse(pinball.HasBallInPlay());

@@ -23,4 +23,8 @@ public class Pinball
     {
         return score;
     }
+    public bool HasBallInPlay()
+    {
+        return false;
+    }
 }
