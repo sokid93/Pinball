@@ -21,10 +21,16 @@ public class DomainTests
     [Test]
     public void testAddingScore()
     {
-        Pinball pinball = new Pinball(0);
+        Pinball pinball = new Pinball();
         pinball.AddPoints(10);
         Assert.AreEqual(10, pinball.GetScore());
         pinball.AddPoints(100);
         Assert.AreEqual(110, pinball.GetScore());
+    }
+    [Test]
+    public void asdasdfsadf()
+    {
+        Pinball pinball = new Pinball();
+        Assert.IsFalse(pinball.HasBallInPlay());
     }
 }
