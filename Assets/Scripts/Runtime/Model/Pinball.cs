@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -18,6 +19,8 @@ public class Pinball
 
     public Pinball(int ballsAvailable)
     {
+        if (ballsAvailable < 2)
+            throw new ArgumentException("El minimo de bolas que se pueden pasar al constructor es 2");
         score = 0;
         hasBall = false;
         isGameOver = false;
@@ -40,7 +43,8 @@ public class Pinball
 
     public void ReleaseBall()
     {
-        hasBall = true;
+        if (ballsRemaining > 0)
+            hasBall = true;
     }
     public void LoseBall()
     {
