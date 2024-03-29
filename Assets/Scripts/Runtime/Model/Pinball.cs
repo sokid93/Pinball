@@ -34,4 +34,8 @@ public class Pinball
     {
         hasBall = true;
     }
+    public void LoseBall()
+    {
+        hasBall = false;
+    }
 }
