@@ -85,6 +85,6 @@ public class DomainTests
         Pinball pinball = new Pinball(3);
         pinball.ReleaseBall();
         pinball.ReleaseBall();
-        Assert.Equals(2, pinball.CheckRemainingBalls());
+        Assert.AreEqual(2, pinball.CheckRemainingBalls());
     }
 }
