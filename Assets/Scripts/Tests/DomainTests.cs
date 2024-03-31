@@ -58,6 +58,7 @@ public class DomainTests
     public void GameOverWhenLosingLastBall()
     {
         Pinball pinball = new Pinball();
+        pinball.ReleaseBall();
         pinball.LoseBall();
         Assert.IsTrue(pinball.GameOver());
     }
@@ -65,6 +66,7 @@ public class DomainTests
     public void NotGameOverIfHasBallsRemainingWhenLosingBall()
     {
         Pinball pinball = new Pinball(3);
+        pinball.ReleaseBall();
         pinball.LoseBall();
         Assert.IsFalse(pinball.GameOver());
     }
@@ -72,6 +74,7 @@ public class DomainTests
     public void CannotReleaseBallIfNoBallsRemaining()
     {
         Pinball pinball = new Pinball();
+        pinball.ReleaseBall();
         pinball.LoseBall();
         pinball.ReleaseBall();
         Assert.IsFalse(pinball.HasBallInPlay());
