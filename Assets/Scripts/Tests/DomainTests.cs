@@ -19,7 +19,7 @@ public class DomainTests
     //    Assert.AreEqual(100, pinball.GetScore());
     //}
     [Test]
-    public void AddScore()
+    public void AddPointsToScore()
     {
         Pinball pinball = new Pinball();
         pinball.AddPoints(10);
@@ -62,7 +62,7 @@ public class DomainTests
         Assert.IsTrue(pinball.GameOver());
     }
     [Test]
-    public void NotGameOverIfHasBallsRemaining()
+    public void NotGameOverIfHasBallsRemainingWhenLosingBall()
     {
         Pinball pinball = new Pinball(3);
         pinball.LoseBall();
