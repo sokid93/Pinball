@@ -63,5 +63,8 @@ public class Pinball
     {
         return isGameOver;
     }
-
+    public int CheckRemainingBalls()
+    {
+        return ballsRemaining;
+    }
 }

@@ -76,4 +76,12 @@ public class DomainTests
         pinball.ReleaseBall();
         Assert.IsFalse(pinball.HasBallInPlay());
     }
+    [Test]
+    public void CannotReleaseBallIfThereIsOneBallInPlay()
+    {
+        Pinball pinball = new Pinball(3);
+        pinball.ReleaseBall();
+        pinball.ReleaseBall();
+        Assert.Equals(2, pinball.CheckRemainingBalls());
+    }
 }
