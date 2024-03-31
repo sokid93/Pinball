@@ -87,4 +87,11 @@ public class DomainTests
         pinball.ReleaseBall();
         Assert.AreEqual(2, pinball.CheckRemainingBalls());
     }
+    [Test]
+    public void CannotLoseBallIfNoBallInPlay()
+    {
+        Pinball pinball = new Pinball();
+        pinball.LoseBall();
+        Assert.AreEqual(pinball.CheckRemainingBalls(), new Pinball().CheckRemainingBalls());
+    }
 }
