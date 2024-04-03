@@ -1,0 +1,16 @@
+{
+    "name": "Pinball.View",
+    "rootNamespace": "",
+    "references": [
+        "GUID:010e958ceae13f24d92d1cd92300c30a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
