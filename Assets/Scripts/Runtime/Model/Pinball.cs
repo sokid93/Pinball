@@ -29,6 +29,8 @@ public class Pinball
 
     public void AddPoints(int points)
     {
+        if (points <= 0)
+            throw new ArgumentException("Solo se pueden añadir puntos mayores que 0");
         score += points;
     }
 
