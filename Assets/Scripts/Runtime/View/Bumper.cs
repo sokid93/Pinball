@@ -8,7 +8,7 @@ public class Bumper : MonoBehaviour
 
     private void Start()
     {
-        pinball = new Pinball(3);
+        pinball = FindObjectOfType<Dependencies>().pinball;
     }
 
     private void OnCollisionEnter(Collision collision)
