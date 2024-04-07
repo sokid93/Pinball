@@ -41,11 +41,16 @@ public class Pinball
 
     public void ReleaseBall()
     {
-        if (HasBallsRemaining()&&!HasBallInPlay()&&!GameOver())
+        if (CanReleaseBall())
         {
             ballsRemaining -= 1;
             hasBall = true;
         }
+    }
+
+    private bool CanReleaseBall()
+    {
+        return HasBallsRemaining() && !HasBallInPlay() && !GameOver();
     }
 
     private bool HasBallsRemaining()
