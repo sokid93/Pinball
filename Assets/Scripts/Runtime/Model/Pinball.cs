@@ -68,7 +68,7 @@ public class Pinball
     }
     public bool GameOver()
     {
-        return isGameOver;
+        return !HasBallsRemaining();
     }
     public int CheckRemainingBalls()
     {

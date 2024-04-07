@@ -75,7 +75,6 @@ public class DomainTests
     {
         Pinball pinball = new Pinball();
         pinball.ReleaseBall();
-        pinball.LoseBall();
         Assert.IsFalse(pinball.CanReleaseBall());
     }
     [Test]
