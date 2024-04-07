@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class Pinball
 {
-    public int score { get; private set; }
+    public int Score { get; private set; }
     int ballsRemaining;
     bool hasBall;
     bool isGameOver;
 
     public Pinball()
     {
-        score = 0;
+        Score = 0;
         hasBall = false;
         isGameOver = false;
         ballsRemaining = 1;
@@ -21,7 +21,7 @@ public class Pinball
     {
         if (ballsAvailable < 2)
             throw new ArgumentException("El minimo de bolas que se pueden pasar al constructor es 2");
-        score = 0;
+        Score = 0;
         hasBall = false;
         isGameOver = false;
         ballsRemaining = ballsAvailable;
@@ -31,13 +31,9 @@ public class Pinball
     {
         if (points <= 0)
             throw new ArgumentException("Solo se pueden añadir puntos mayores que 0");
-        score += points;
+        Score += points;
     }
 
-    public int GetScore()
-    {
-        return score;
-    }
     public bool HasBallInPlay()
     {
         return hasBall;

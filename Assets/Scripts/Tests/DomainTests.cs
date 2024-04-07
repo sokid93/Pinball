@@ -10,7 +10,7 @@ public class DomainTests
     public void DefaultScoreIsZero()
     {
         Pinball pinball = new Pinball();
-        Assert.AreEqual(0, pinball.GetScore());
+        Assert.AreEqual(0, pinball.Score);
     }
     //[Test]
     //public void testInitiateWithNonZeroScore()
@@ -23,9 +23,9 @@ public class DomainTests
     {
         Pinball pinball = new Pinball();
         pinball.AddPoints(10);
-        Assert.AreEqual(10, pinball.GetScore());
+        Assert.AreEqual(10, pinball.Score);
         pinball.AddPoints(100);
-        Assert.AreEqual(110, pinball.GetScore());
+        Assert.AreEqual(110, pinball.Score);
     }
     [Test]
     public void HasNoBallInPlayByDefault()

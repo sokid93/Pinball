@@ -15,6 +15,6 @@ public class ScorePanel : MonoBehaviour
 
     void Update()
     {
-        scorePanel.text= pinball.GetScore().ToString();
+        scorePanel.text= pinball.Score.ToString();
     }
 }
