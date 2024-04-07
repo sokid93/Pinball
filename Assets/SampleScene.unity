@@ -1957,6 +1957,7 @@ GameObject:
   - component: {fileID: 305533251}
   - component: {fileID: 305533250}
   - component: {fileID: 305533249}
+  - component: {fileID: 305533255}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2116,6 +2117,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 916323246}
   m_LocalEulerAnglesHint: {x: 14.477, y: 195.504, z: -176.033}
+--- !u!114 &305533255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305533248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38be321d4f5ee88418897a206fb0531e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightFlipper: {fileID: 305533248}
+  tecla: 97
 --- !u!43 &312476544
 Mesh:
   m_ObjectHideFlags: 0
@@ -3135,6 +3150,7 @@ GameObject:
   - component: {fileID: 575995151}
   - component: {fileID: 575995150}
   - component: {fileID: 575995149}
+  - component: {fileID: 575995155}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -3294,6 +3310,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 916323246}
   m_LocalEulerAnglesHint: {x: -14.478, y: -15.504, z: 3.967}
+--- !u!114 &575995155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575995148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38be321d4f5ee88418897a206fb0531e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightFlipper: {fileID: 575995148}
+  tecla: 108
 --- !u!1 &685372782
 GameObject:
   m_ObjectHideFlags: 0
@@ -5705,65 +5735,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 135582128}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1926518092
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1926518094}
-  - component: {fileID: 1926518093}
-  - component: {fileID: 1926518095}
-  m_Layer: 0
-  m_Name: FlippersControllers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1926518093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926518092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7c3198634dc7c41b1e45d2b1106646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightFlipper: {fileID: 575995148}
---- !u!4 &1926518094
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926518092}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.935281, y: -197.7056, z: 447.10007}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1926518095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926518092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab8daa799cd3ecb4682840db57ad8a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftFlipper: {fileID: 305533248}
 --- !u!1 &1927035878
 GameObject:
   m_ObjectHideFlags: 0
@@ -6294,4 +6265,3 @@ SceneRoots:
   - {fileID: 349365908}
   - {fileID: 1283570827}
   - {fileID: 298547011}
-  - {fileID: 1926518094}
