@@ -7,13 +7,11 @@ public class Pinball
     public int Score { get; private set; }
     int ballsRemaining;
     bool hasBall;
-    bool isGameOver;
 
     public Pinball()
     {
         Score = 0;
         hasBall = false;
-        isGameOver = false;
         ballsRemaining = 1;
     }
 
@@ -23,7 +21,6 @@ public class Pinball
             throw new ArgumentException("El minimo de bolas que se pueden pasar al constructor es 2");
         Score = 0;
         hasBall = false;
-        isGameOver = false;
         ballsRemaining = ballsAvailable;
     }
 
@@ -62,9 +59,6 @@ public class Pinball
     public void LoseBall()
     {
         hasBall = false;
-        
-        if (!HasBallsRemaining())
-            isGameOver = true;
     }
     public bool GameOver()
     {
