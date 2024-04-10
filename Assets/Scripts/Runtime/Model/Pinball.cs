@@ -5,14 +5,14 @@ using System.Collections.Generic;
 public class Pinball
 {
     public int Score { get; private set; }
-    int ballsRemaining;
-    bool hasBall;
+    public int BallsRemaining { get; private set; }
+    public bool HasBallInPlay { get; private set; }
 
     public Pinball()
     {
         Score = 0;
-        hasBall = false;
-        ballsRemaining = 1;
+        HasBallInPlay = false;
+        BallsRemaining = 1;
     }
 
     public Pinball(int ballsAvailable)
@@ -20,8 +20,8 @@ public class Pinball
         if (ballsAvailable < 2)
             throw new ArgumentException("El minimo de bolas que se pueden pasar al constructor es 2");
         Score = 0;
-        hasBall = false;
-        ballsRemaining = ballsAvailable;
+        HasBallInPlay = false;
+        BallsRemaining = ballsAvailable;
     }
 
     public void AddPoints(int points)
@@ -31,41 +31,33 @@ public class Pinball
         Score += points;
     }
 
-    public bool HasBallInPlay()
-    {
-        return hasBall;
-    }
-
     public void ReleaseBall()
     {
         if (!CanReleaseBall())
         {
             throw new InvalidOperationException("No se puede");
         }
-        ballsRemaining -= 1;
-        hasBall = true;
+        BallsRemaining -= 1;
+        HasBallInPlay = true;
     }
 
     public bool CanReleaseBall()
     {
-        return HasBallsRemaining() && !HasBallInPlay() && !GameOver();
+        return HasBallsRemaining() && !HasBallInPlay&& !GameOver();
     }
 
     private bool HasBallsRemaining()
     {
-        return ballsRemaining > 0;
+        return BallsRemaining > 0;
     }
 
     public void LoseBall()
     {
-        hasBall = false;
+        HasBallInPlay = false;
     }
+
     public bool GameOver()
     {
         return !HasBallsRemaining();
-    }
-    public int CheckRemainingBalls()
-    {
-        return ballsRemaining;
     }
 }

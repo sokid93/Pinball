@@ -31,14 +31,14 @@ public class DomainTests
     public void HasNoBallInPlayByDefault()
     {
         Pinball pinball = new Pinball();
-        Assert.IsFalse(pinball.HasBallInPlay());
+        Assert.IsFalse(pinball.HasBallInPlay);
     }
     [Test]
     public void HasBallInPlayWhenReleased()
     {
         Pinball pinball = new Pinball();
         pinball.ReleaseBall();
-        Assert.IsTrue(pinball.HasBallInPlay());
+        Assert.IsTrue(pinball.HasBallInPlay);
     }
     [Test]
     public void HasNoBallInPlayWhenLosingBall()
@@ -46,7 +46,7 @@ public class DomainTests
         Pinball pinball = new Pinball();
         pinball.ReleaseBall();
         pinball.LoseBall();
-        Assert.IsFalse(pinball.HasBallInPlay());
+        Assert.IsFalse(pinball.HasBallInPlay);
     }
     [Test]
     public void NotGameOverByDefault()
@@ -89,13 +89,13 @@ public class DomainTests
     {
         Pinball pinball = new Pinball();
         pinball.LoseBall();
-        Assert.AreEqual(pinball.CheckRemainingBalls(), new Pinball().CheckRemainingBalls());
+        Assert.AreEqual(pinball.BallsRemaining, new Pinball().BallsRemaining);
     }
     [Test]
     public void ReleaseBallDecreasesBallsRemaining()
     {
         Pinball pinball = new Pinball(3);
         pinball.ReleaseBall();
-        Assert.AreEqual(2, pinball.CheckRemainingBalls());
+        Assert.AreEqual(2, pinball.BallsRemaining);
     }
 }

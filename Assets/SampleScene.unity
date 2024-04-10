@@ -2129,8 +2129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38be321d4f5ee88418897a206fb0531e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightFlipper: {fileID: 305533248}
-  tecla: 97
+  flipper: {fileID: 305533248}
+  activationKey: 97
 --- !u!43 &312476544
 Mesh:
   m_ObjectHideFlags: 0
@@ -3322,8 +3322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38be321d4f5ee88418897a206fb0531e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightFlipper: {fileID: 575995148}
-  tecla: 108
+  flipper: {fileID: 575995148}
+  activationKey: 108
 --- !u!1 &685372782
 GameObject:
   m_ObjectHideFlags: 0
