@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Flipper : MonoBehaviour
 {
-    [SerializeField] GameObject rightFlipper;
-    [SerializeField] KeyCode tecla;
+    [SerializeField] GameObject flipper;
+    [SerializeField] KeyCode activationKey;
 
     private void Update()
     {
-        if (Input.GetKey(tecla))
-            rightFlipper.GetComponent<HingeJoint>().useMotor = true;
+        if (Input.GetKey(activationKey))
+            flipper.GetComponent<HingeJoint>().useMotor = true;
 
         else
-        {
-            rightFlipper.GetComponent<HingeJoint>().useMotor = false;
-        }          
+            flipper.GetComponent<HingeJoint>().useMotor = false;
     }
 }
