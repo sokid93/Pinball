@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScorePanel : MonoBehaviour
+public class ScorePanel : MonoBehaviour, sadlñkfjñs
 {
     [SerializeField] Text scorePanel;
-    Pinball pinball;
+    ScoreController controller;
 
-    void Start()
+    private void Awake()
     {
-        pinball = FindObjectOfType<Dependencies>().pinball;
+        controller = FindObjectOfType<Dependencies>().scoreController;    
     }
 
-    void Update()
+    private void Start()
     {
-        scorePanel.text= pinball.Score.ToString();
+        controller.InitializeScore();
+    }
+
+    public void DisplayPoints(int points)
+    {
+        scorePanel.text = points.ToString();
     }
 }
