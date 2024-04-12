@@ -2,8 +2,8 @@
     "name": "Pinball.View",
     "rootNamespace": "",
     "references": [
-        "GUID:010e958ceae13f24d92d1cd92300c30a",
-        "GUID:ea632f83dc865f4499f0a40d483aaa4e"
+        "GUID:ea632f83dc865f4499f0a40d483aaa4e",
+        "GUID:010e958ceae13f24d92d1cd92300c30a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
