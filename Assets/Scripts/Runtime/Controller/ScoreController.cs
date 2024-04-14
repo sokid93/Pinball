@@ -5,10 +5,10 @@ public class ScoreController
     private readonly Pinball pinball;
     private readonly ScoreUpdate scoreUpdater;
 
-    public ScoreController(Pinball pinball, ScoreUpdate scoreupdater)
+    public ScoreController(Pinball pinball, ScoreUpdate scoreUpdater)
     {
         this.pinball = pinball;
-        this.scoreUpdater = scoreupdater;
+        this.scoreUpdater = scoreUpdater;
     }
 
     public void InitializeScore()
