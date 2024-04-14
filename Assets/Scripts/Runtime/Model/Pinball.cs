@@ -41,7 +41,7 @@ public class Pinball
 
     public bool CanReleaseBall()
     {
-        return HasBallsRemaining() && !HasBallInPlay && !GameOver();
+        return !HasBallInPlay && !GameOver();
     }
 
     private bool HasBallsRemaining()
