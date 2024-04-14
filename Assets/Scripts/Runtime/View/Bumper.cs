@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Bumper : MonoBehaviour
 {
+    Pinball pinball;
     ScoreController scoreController;
 
     private void Start()
     {
+        pinball = FindObjectOfType<Dependencies>().pinball;
         scoreController = FindObjectOfType<Dependencies>().scoreController;
     }
 
@@ -16,7 +18,7 @@ public class Bumper : MonoBehaviour
         if (collision.transform.CompareTag("Ball"))
         {
             Rigidbody ballRB = collision.rigidbody;
-            ballRB.AddExplosionForce(1000, collision.contacts[0].point, 1);
+            ballRB.AddExplosionForce(pinball.BumpForce, collision.contacts[0].point, 1);
             scoreController.EarnPoints(10);
         }
     }

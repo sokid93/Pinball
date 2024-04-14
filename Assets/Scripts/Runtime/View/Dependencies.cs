@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Dependencies : MonoBehaviour
 {
-    Pinball pinball;
+    public Pinball pinball;
     public ScoreController scoreController { private set; get; }
     public BallsManager ballsManager { private set; get; }
 
