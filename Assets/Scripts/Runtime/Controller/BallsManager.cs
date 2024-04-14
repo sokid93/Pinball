@@ -12,8 +12,11 @@ public class BallsManager
 
     public void ReleaseBall()
     {
-        pinball.ReleaseBall();
-        handleBall.ReleaseBall();
+        if (pinball.CanReleaseBall())
+        {
+            pinball.ReleaseBall();
+            handleBall.ReleaseBall();
+        }
     }
 
     public void LoseBall()
