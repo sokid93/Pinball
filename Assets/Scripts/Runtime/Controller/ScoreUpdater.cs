@@ -1,4 +1,4 @@
-public interface sadlñkfjñs
+public interface ScoreUpdater
 {
     public void DisplayPoints(int points);
 }

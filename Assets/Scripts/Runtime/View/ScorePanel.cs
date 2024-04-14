@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScorePanel : MonoBehaviour, sadlñkfjñs
+public class ScorePanel : MonoBehaviour, ScoreUpdater
 {
     [SerializeField] Text scorePanel;
-    ScoreController controller;
+    ScoreController ScoreController;
 
     private void Awake()
     {
-        controller = FindObjectOfType<Dependencies>().scoreController;    
+        ScoreController = FindObjectOfType<Dependencies>().scoreController;    
     }
 
     private void Start()
     {
-        controller.InitializeScore();
+        ScoreController.InitializeScore();
     }
 
     public void DisplayPoints(int points)

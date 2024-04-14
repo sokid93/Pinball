@@ -3,9 +3,9 @@
 public class ScoreController
 {
     private readonly Pinball pinball;
-    private readonly sadlñkfjñs pointsDisplay;
+    private readonly ScoreUpdater pointsDisplay;
 
-    public ScoreController(Pinball pinball, sadlñkfjñs pointsDisplay)
+    public ScoreController(Pinball pinball, ScoreUpdater pointsDisplay)
     {
         this.pinball = pinball;
         this.pointsDisplay = pointsDisplay;
