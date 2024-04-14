@@ -2,19 +2,23 @@
 public class BallsManager
 {
     private readonly Pinball pinball;
+    private readonly HandleBall handleBall;
 
-    public BallsManager(Pinball pinball)
+    public BallsManager(Pinball pinball, HandleBall handleBall)
     {
         this.pinball = pinball;
+        this.handleBall = handleBall;
     }
 
     public void ReleaseBall()
     {
         pinball.ReleaseBall();
+        handleBall.ReleaseBall();
     }
 
     public void LoseBall()
     {
         pinball.LoseBall();
+        handleBall.LoseBall();
     }
 }
