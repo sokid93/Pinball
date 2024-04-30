@@ -47,11 +47,6 @@ public class Pinball
         return !HasBallInPlay && !GameOver();
     }
 
-    private bool HasBallsRemaining()
-    {
-        return BallsRemaining > 0;
-    }
-
     public void LoseBall()
     {
         HasBallInPlay = false;
@@ -59,6 +54,6 @@ public class Pinball
 
     public bool GameOver()
     {
-        return !HasBallsRemaining();
+        return BallsRemaining == 0;
     }
 }
