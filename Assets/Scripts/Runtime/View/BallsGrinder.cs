@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallsDispenser : MonoBehaviour, HandleBall
+public class BallsGrinder : MonoBehaviour, HandleBall
 {
-    [SerializeField] GameObject ball;
-    [SerializeField] GameObject ballSpawner;
     BallsManager ballsManager;
 
     private void Start()
@@ -13,21 +11,22 @@ public class BallsDispenser : MonoBehaviour, HandleBall
         ballsManager = FindObjectOfType<Dependencies>().ballsManager;
     }
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (other.CompareTag("Ball"))
         {
-            ballsManager.ReleaseBall();
+            ballsManager.LoseBall();
         }
     }
 
     public void LoseBall()
     {
-
+        GameObject lostBall = GameObject.FindGameObjectWithTag("Ball");
+        Destroy(lostBall);
     }
 
     public void ReleaseBall()
     {
-        Instantiate(ball, ballSpawner.transform.position, Quaternion.identity);
+        
     }
 }
