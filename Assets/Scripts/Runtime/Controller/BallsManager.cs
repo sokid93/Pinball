@@ -1,27 +1,31 @@
 
 public class BallsManager
 {
-    private readonly Pinball pinball;
-    private readonly HandleBall handleBall;
+    private readonly Pinball Pinball;
+    private readonly HandleBall HandleBall;
 
     public BallsManager(Pinball pinball, HandleBall handleBall)
     {
-        this.pinball = pinball;
-        this.handleBall = handleBall;
+        this.Pinball = pinball;
+        this.HandleBall = handleBall;
     }
 
     public void ReleaseBall()
     {
-        if (pinball.CanReleaseBall())
+        if (Pinball.CanReleaseBall())
         {
-            pinball.ReleaseBall();
-            handleBall.ReleaseBall();
+            Pinball.ReleaseBall();
+            HandleBall.ReleaseBall();
         }
     }
 
     public void LoseBall()
     {
-        pinball.LoseBall();
-        handleBall.LoseBall();
+        Pinball.LoseBall();
+        HandleBall.LoseBall();
+        if (Pinball.GameOver())
+        {
+            HandleBall.GameOver();
+        }
     }
 }

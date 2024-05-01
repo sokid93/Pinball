@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class BallsDispenser : MonoBehaviour, HandleBall
 {
-    [SerializeField] GameObject ball;
-    [SerializeField] GameObject ballSpawner;
-    BallsManager ballsManager;
+    [SerializeField] GameObject Ball;
+    [SerializeField] GameObject BallSpawner;
+    [SerializeField] GameObject GameOverPanel;
+    BallsManager BallsManager;
 
     private void Start()
     {
-        ballsManager = FindObjectOfType<Dependencies>().ballsManager;
+        BallsManager = FindObjectOfType<Dependencies>().ballsManager;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ballsManager.ReleaseBall();
+            BallsManager.ReleaseBall();
         }
-    }
-
-    public void LoseBall()
-    {
-
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            BallsManager.LoseBall();
+        }
     }
 
     public void ReleaseBall()
     {
-        Instantiate(ball, ballSpawner.transform.position, Quaternion.identity);
+        Instantiate(Ball, BallSpawner.transform.position, Quaternion.identity);
+    }
+
+    public void LoseBall()
+    {
+        GameObject lostBall = GameObject.FindGameObjectWithTag("Ball");
+        Destroy(lostBall);
+    }
+
+    public void GameOver()
+    {
+        GameOverPanel.SetActive(true);
     }
 }

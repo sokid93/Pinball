@@ -36,7 +36,7 @@ public class Pinball
     {
         if (!CanReleaseBall())
         {
-            throw new InvalidOperationException("Intentas lanzar una nueva bola pero no hay mas bolas disponibles");
+            throw new InvalidOperationException("Intentas lanzar una nueva bola pero no hay bolas disponibles");
         }
         BallsRemaining -= 1;
         HasBallInPlay = true;
@@ -49,6 +49,10 @@ public class Pinball
 
     public void LoseBall()
     {
+        if (BallsRemaining < 0)
+        {
+            throw new InvalidOperationException("No puedes perder una bola porque no te queda ninguna");
+        }
         HasBallInPlay = false;
     }
 

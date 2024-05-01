@@ -2,23 +2,23 @@
 
 public class ScoreController
 {
-    private readonly Pinball pinball;
-    private readonly ScoreUpdate scoreUpdater;
+    private readonly Pinball Pinball;
+    private readonly ScoreUpdate ScoreUpdater;
 
     public ScoreController(Pinball pinball, ScoreUpdate scoreUpdater)
     {
-        this.pinball = pinball;
-        this.scoreUpdater = scoreUpdater;
+        this.Pinball = pinball;
+        this.ScoreUpdater = scoreUpdater;
     }
 
     public void InitializeScore()
     {
-        scoreUpdater.DisplayPoints(pinball.Score);
+        ScoreUpdater.DisplayPoints(Pinball.Score);
     }
 
     public void EarnPoints(int points)
     {
-        pinball.AddPoints(points);
-        scoreUpdater.DisplayPoints(pinball.Score);
+        Pinball.AddPoints(points);
+        ScoreUpdater.DisplayPoints(Pinball.Score);
     }
 }

@@ -2,31 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallsGrinder : MonoBehaviour, HandleBall
+public class BallsGrinder : MonoBehaviour
 {
-    BallsManager ballsManager;
+    BallsManager BallsManager;
 
     private void Start()
     {
-        ballsManager = FindObjectOfType<Dependencies>().ballsManager;
+        BallsManager = FindObjectOfType<Dependencies>().ballsManager;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball"))
+        if (other.gameObject.CompareTag("Ball"))
         {
-            ballsManager.LoseBall();
+            BallsManager.LoseBall();
         }
-    }
-
-    public void LoseBall()
-    {
-        GameObject lostBall = GameObject.FindGameObjectWithTag("Ball");
-        Destroy(lostBall);
-    }
-
-    public void ReleaseBall()
-    {
-        
     }
 }
