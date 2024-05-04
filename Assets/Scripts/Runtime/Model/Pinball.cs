@@ -58,6 +58,8 @@ public class Pinball
 
     public bool GameOver()
     {
-        return BallsRemaining == 0;
+        if(!HasBallInPlay)
+            return BallsRemaining == 0;
+        else return false;
     }
 }
