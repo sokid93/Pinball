@@ -465,8 +465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed3c15ec016c54488d6d422d8a41506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 7124191362186378237, guid: 4f2e87b605828d54889b8d7410af13cf, type: 3}
-  ballSpawner: {fileID: 112284983}
+  Ball: {fileID: 7124191362186378237, guid: 4f2e87b605828d54889b8d7410af13cf, type: 3}
+  BallSpawner: {fileID: 112284983}
+  GameOverPanel: {fileID: 491780410}
 --- !u!1 &127105624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,7 +3260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65fe61ae088b2047a5bd5bedb6d7bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverPanel: {fileID: 491780410}
 --- !u!65 &546366658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3528,11 +3528,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 55
-    m_FontStyle: 0
+    m_FontSize: 80
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 5
-    m_MaxSize: 55
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

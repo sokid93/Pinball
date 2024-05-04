@@ -53,6 +53,13 @@ public class DomainTests
         Assert.IsFalse(pinball.GameOver());
     }
     [Test]
+    public void NotGameOverWhenPlayingLastBall()
+    {
+        Pinball pinball = new Pinball();
+        pinball.ReleaseBall();
+        Assert.IsFalse(pinball.GameOver());
+    }
+    [Test]
     public void GameOverWhenLosingLastBall()
     {
         Pinball pinball = new Pinball();
