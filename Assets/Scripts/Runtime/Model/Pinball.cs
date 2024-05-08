@@ -5,14 +5,14 @@ public class Pinball
     public int Score { get; private set; }
     public int BallsRemaining { get; private set; }
     public bool HasBallInPlay { get; private set; }
-    public int BumpForce { get; private set; }
+    public float BumpForce { get; private set; }
 
     public Pinball()
     {
         Score = 0;
         HasBallInPlay = false;
         BallsRemaining = 1;
-        BumpForce = 1000;
+        BumpForce = 2000f;
     }
 
     public Pinball(int ballsAvailable)
@@ -22,7 +22,7 @@ public class Pinball
         Score = 0;
         HasBallInPlay = false;
         BallsRemaining = ballsAvailable;
-        BumpForce = 1000;
+        BumpForce = 2000f;
     }
 
     public void AddPoints(int points)

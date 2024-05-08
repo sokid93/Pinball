@@ -31,7 +31,6 @@ public class Plunger : MonoBehaviour
         if (chargedForce < maxForce)
         {
             chargedForce += 400f * Time.deltaTime;
-            Debug.Log(chargedForce);
         }
         else
             chargedForce = maxForce;
