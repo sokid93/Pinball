@@ -7,12 +7,22 @@ public class Flipper : MonoBehaviour
     [SerializeField] GameObject flipper;
     [SerializeField] KeyCode activationKey;
 
+    Pinball pinball;
+
+    private void Start()
+    {
+        pinball = FindObjectOfType<Dependencies>().pinball;
+    }
+
 
     private void Update()
     {
-        if (Input.GetKey(activationKey))
-            flipper.GetComponent<HingeJoint>().useMotor = true;
-        else
-            flipper.GetComponent<HingeJoint>().useMotor = false;
+        if (!pinball.GameOver())
+        {
+            if (Input.GetKey(activationKey))
+                flipper.GetComponent<HingeJoint>().useMotor = true;
+            else
+                flipper.GetComponent<HingeJoint>().useMotor = false;
+        } 
     }
 }
