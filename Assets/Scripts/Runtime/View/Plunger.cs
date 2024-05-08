@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Plunger : MonoBehaviour
 {
-    [SerializeField] GameObject ball;
-    Rigidbody ballRigidbody;
-    Pinball pinball;
+    float chargedForce = 0;
+    float maxForce = 2000f;
 
-    private void Start()
+    private void OnTriggerStay(Collider other)
     {
-        ballRigidbody = ball.GetComponent<Rigidbody>();
-        pinball = FindObjectOfType<Dependencies>().pinball;
-    }
-
-    void Update()
-    {
-        
+        Rigidbody ballRigidbody = other.gameObject.GetComponent<Rigidbody>();
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (chargedForce < maxForce)
+            {
+                chargedForce += 400f * Time.deltaTime;
+                Debug.Log(chargedForce);
+            }
+            else
+                chargedForce = maxForce;
+        }
+        else
+        {
+            ballRigidbody.AddForce(new Vector3(0, 0, chargedForce));
+            chargedForce = 0;
+        }
     }
 }
