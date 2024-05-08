@@ -12,18 +12,28 @@ public class Plunger : MonoBehaviour
         Rigidbody ballRigidbody = other.gameObject.GetComponent<Rigidbody>();
         if (Input.GetKey(KeyCode.Space))
         {
-            if (chargedForce < maxForce)
-            {
-                chargedForce += 400f * Time.deltaTime;
-                Debug.Log(chargedForce);
-            }
-            else
-                chargedForce = maxForce;
+            ChargePlunger();
         }
         else
         {
-            ballRigidbody.AddForce(new Vector3(0, 0, chargedForce));
-            chargedForce = 0;
+            LaunchBall(ballRigidbody);
         }
+    }
+
+    private void LaunchBall(Rigidbody ballRigidbody)
+    {
+        ballRigidbody.AddForce(new Vector3(0, 0, chargedForce));
+        chargedForce = 0;
+    }
+
+    private void ChargePlunger()
+    {
+        if (chargedForce < maxForce)
+        {
+            chargedForce += 400f * Time.deltaTime;
+            Debug.Log(chargedForce);
+        }
+        else
+            chargedForce = maxForce;
     }
 }
