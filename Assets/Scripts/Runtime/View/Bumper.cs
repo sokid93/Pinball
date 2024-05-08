@@ -17,9 +17,13 @@ public class Bumper : MonoBehaviour
     {
         if (collision.transform.CompareTag("Ball"))
         {
-            Rigidbody ballRB = collision.rigidbody;
-            ballRB.AddExplosionForce(pinball.BumpForce, collision.contacts[0].point, 1);
-            scoreController.EarnPoints(10);
+            BumpBall(collision);
         }
+    }
+
+    private void BumpBall(Collision collision)
+    {
+        collision.gameObject.GetComponent<Rigidbody>().AddExplosionForce(pinball.BumpForce, collision.contacts[0].point, 1);
+        scoreController.EarnPoints(10);
     }
 }
