@@ -15,14 +15,24 @@ public class Plunger : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Rigidbody ballRigidbody = other.gameObject.GetComponent<Rigidbody>();
-        if (Input.GetKey(KeyCode.Space))
+        if (SpaceKeyPressed())
         {
             ChargePlunger();
         }
-        else
+        else if (SpaceKeyReleased())
         {
             LaunchBall(ballRigidbody);
         }
+    }
+
+    private static bool SpaceKeyReleased()
+    {
+        return Input.GetKeyUp(KeyCode.Space);
+    }
+
+    private static bool SpaceKeyPressed()
+    {
+        return Input.GetKey(KeyCode.Space);
     }
 
     private void LaunchBall(Rigidbody ballRigidbody)
@@ -33,11 +43,16 @@ public class Plunger : MonoBehaviour
 
     private void ChargePlunger()
     {
-        if (chargedForce < pinball.PlungerMaxForce)
+        if (HasNotReachMaxForce())
         {
             chargedForce += 400f * Time.deltaTime;
         }
         else
             chargedForce = pinball.PlungerMaxForce;
+    }
+
+    private bool HasNotReachMaxForce()
+    {
+        return chargedForce < pinball.PlungerMaxForce;
     }
 }
