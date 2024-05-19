@@ -6,6 +6,7 @@ public class Pinball
     public int BallsRemaining { get; private set; }
     public bool HasBallInPlay { get; private set; }
     public float BumpForce { get; private set; }
+    public float PlungerMaxForce { get; private set; }
 
     public Pinball()
     {
@@ -13,6 +14,7 @@ public class Pinball
         HasBallInPlay = false;
         BallsRemaining = 1;
         BumpForce = 2000f;
+        PlungerMaxForce = 2000f;
     }
 
     public Pinball(int ballsAvailable)
@@ -23,6 +25,7 @@ public class Pinball
         HasBallInPlay = false;
         BallsRemaining = ballsAvailable;
         BumpForce = 2000f;
+        PlungerMaxForce = 2000f;
     }
 
     public void AddPoints(int points)

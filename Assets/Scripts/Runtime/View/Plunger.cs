@@ -5,7 +5,12 @@ using UnityEngine;
 public class Plunger : MonoBehaviour
 {
     float chargedForce = 0;
-    float maxForce = 2000f;
+    Pinball pinball;
+
+    private void Start()
+    {
+        pinball = FindObjectOfType<Dependencies>().pinball;
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -28,11 +33,11 @@ public class Plunger : MonoBehaviour
 
     private void ChargePlunger()
     {
-        if (chargedForce < maxForce)
+        if (chargedForce < pinball.PlungerMaxForce)
         {
             chargedForce += 400f * Time.deltaTime;
         }
         else
-            chargedForce = maxForce;
+            chargedForce = pinball.PlungerMaxForce;
     }
 }
