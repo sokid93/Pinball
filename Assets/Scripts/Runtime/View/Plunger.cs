@@ -4,55 +4,70 @@ using UnityEngine;
 
 public class Plunger : MonoBehaviour
 {
-    float chargedForce = 0;
-    Pinball pinball;
+    private Pinball pinball;
+    private bool isCharging = false;
+    private float chargedForce = 0f;
+    private Rigidbody ballRigidbody;
 
     private void Start()
     {
         pinball = FindObjectOfType<Dependencies>().pinball;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        Rigidbody ballRigidbody = other.gameObject.GetComponent<Rigidbody>();
-        if (SpaceKeyPressed())
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isCharging = true;
+            chargedForce = 0f;
+        }
+
+        if (Input.GetKey(KeyCode.Space) && isCharging)
         {
             ChargePlunger();
         }
-        else if (SpaceKeyReleased())
+
+        if (Input.GetKeyUp(KeyCode.Space) && isCharging)
         {
+            isCharging = false;
             LaunchBall(ballRigidbody);
         }
     }
 
-    private static bool SpaceKeyReleased()
+    private void OnTriggerEnter(Collider other)
     {
-        return Input.GetKeyUp(KeyCode.Space);
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            ballRigidbody = other.gameObject.GetComponent<Rigidbody>();
+        }
     }
 
-    private static bool SpaceKeyPressed()
+    private void OnTriggerExit(Collider other)
     {
-        return Input.GetKey(KeyCode.Space);
-    }
-
-    private void LaunchBall(Rigidbody ballRigidbody)
-    {
-        ballRigidbody.AddForce(new Vector3(0, 0, chargedForce));
-        chargedForce = 0;
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            ballRigidbody = null;
+        }
     }
 
     private void ChargePlunger()
     {
-        if (HasNotReachMaxForce())
+        if (chargedForce < pinball.PlungerMaxForce)
         {
-            chargedForce += 400f * Time.deltaTime;
+            chargedForce += Time.deltaTime * 4;
         }
         else
+        {
             chargedForce = pinball.PlungerMaxForce;
+        }
     }
 
-    private bool HasNotReachMaxForce()
+    private void LaunchBall(Rigidbody ballRigidbody)
     {
-        return chargedForce < pinball.PlungerMaxForce;
+        if (ballRigidbody != null)
+        {
+            ballRigidbody.AddForce(Vector3.forward * chargedForce, ForceMode.Impulse);
+        }
+        chargedForce = 0f;
     }
 }

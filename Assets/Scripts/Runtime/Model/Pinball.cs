@@ -14,7 +14,7 @@ public class Pinball
         HasBallInPlay = false;
         BallsRemaining = ballsAvailable;
         BumpForce = 2000f;
-        PlungerMaxForce = 2000f;
+        PlungerMaxForce = 20f;
     }
 
     public Pinball() : this(1) { }
