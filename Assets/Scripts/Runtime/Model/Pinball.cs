@@ -13,7 +13,7 @@ public class Pinball
         Score = 0;
         HasBallInPlay = false;
         BallsRemaining = ballsAvailable;
-        BumpForce = 2000f;
+        BumpForce = 20f;
         PlungerMaxForce = 20f;
     }
 

@@ -23,7 +23,7 @@ public class Bumper : MonoBehaviour
 
     private void BumpBall(Collision collision)
     {
-        collision.gameObject.GetComponent<Rigidbody>().AddExplosionForce(pinball.BumpForce, collision.contacts[0].point, 1);
+        collision.gameObject.GetComponent<Rigidbody>().AddExplosionForce(pinball.BumpForce, collision.contacts[0].point, 1, 0f, ForceMode.Impulse);
         scoreController.EarnPoints(10);
     }
 }
