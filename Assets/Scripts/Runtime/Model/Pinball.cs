@@ -8,25 +8,16 @@ public class Pinball
     public float BumpForce { get; private set; }
     public float PlungerMaxForce { get; private set; }
 
-    public Pinball()
-    {
-        Score = 0;
-        HasBallInPlay = false;
-        BallsRemaining = 1;
-        BumpForce = 2000f;
-        PlungerMaxForce = 2000f;
-    }
-
     public Pinball(int ballsAvailable)
     {
-        if (ballsAvailable < 2)
-            throw new ArgumentException("El minimo de bolas que se pueden pasar al constructor es 2");
         Score = 0;
         HasBallInPlay = false;
         BallsRemaining = ballsAvailable;
         BumpForce = 2000f;
         PlungerMaxForce = 2000f;
     }
+
+    public Pinball() : this(1) { }
 
     public Pinball(int ballsAvailable, int score) : this(ballsAvailable)
     {
