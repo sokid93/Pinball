@@ -6,8 +6,8 @@ public class BallsManager
 
     public BallsManager(Pinball pinball, HandleBall handleBall)
     {
-        this.Pinball = pinball;
-        this.HandleBall = handleBall;
+        Pinball = pinball;
+        HandleBall = handleBall;
     }
 
     public void ReleaseBall()
