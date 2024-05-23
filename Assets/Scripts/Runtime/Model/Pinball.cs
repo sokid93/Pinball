@@ -28,6 +28,11 @@ public class Pinball
         PlungerMaxForce = 2000f;
     }
 
+    public Pinball(int ballsAvailable, int score) : this(ballsAvailable)
+    {
+        Score = score;
+    }
+
     public void AddPoints(int points)
     {
         if (points <= 0)
