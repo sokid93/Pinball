@@ -3,9 +3,9 @@
 public class ScoreController
 {
     private readonly Pinball Pinball;
-    private readonly ScoreUpdate ScoreUpdater;
+    private readonly UpdateScore ScoreUpdater;
 
-    public ScoreController(Pinball pinball, ScoreUpdate scoreUpdater)
+    public ScoreController(Pinball pinball, UpdateScore scoreUpdater)
     {
         this.Pinball = pinball;
         this.ScoreUpdater = scoreUpdater;

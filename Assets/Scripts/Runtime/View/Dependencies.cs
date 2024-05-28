@@ -12,7 +12,7 @@ public class Dependencies : MonoBehaviour
     private void Awake()
     {
         pinball = new Pinball(3);
-        ScoreUpdate pointsDisplay = FindObjectOfType<ScorePanel>();
+        UpdateScore pointsDisplay = FindObjectOfType<ScorePanel>();
         scoreController = new ScoreController(pinball, pointsDisplay);
         HandleBall handleBall = FindObjectOfType<BallsDispenser>();
         ballsManager = new BallsManager(pinball, handleBall);

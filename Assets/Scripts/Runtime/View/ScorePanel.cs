@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScorePanel : MonoBehaviour, ScoreUpdate
+public class ScorePanel : MonoBehaviour, UpdateScore
 {
     [SerializeField] Text scorePanel;
     ScoreController ScoreController;
