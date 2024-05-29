@@ -10,7 +10,7 @@ public class ScorePanel : MonoBehaviour, UpdateScore
 
     private void Awake()
     {
-        ScoreController = FindObjectOfType<Dependencies>().scoreController;    
+        ScoreController = FindObjectOfType<Dependencies>().ScoreController;    
     }
 
     private void Start()

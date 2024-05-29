@@ -9,8 +9,8 @@ public class Bumper : MonoBehaviour
 
     private void Start()
     {
-        pinball = FindObjectOfType<Dependencies>().pinball;
-        scoreController = FindObjectOfType<Dependencies>().scoreController;
+        pinball = FindObjectOfType<Dependencies>().Pinball;
+        scoreController = FindObjectOfType<Dependencies>().ScoreController;
     }
 
     private void OnCollisionEnter(Collision collision)

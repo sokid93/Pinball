@@ -11,7 +11,7 @@ public class BallsDispenser : MonoBehaviour, HandleBall
 
     private void Start()
     {
-        BallsManager = FindObjectOfType<Dependencies>().ballsManager;
+        BallsManager = FindObjectOfType<Dependencies>().BallsManager;
     }
 
     private void Update()

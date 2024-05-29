@@ -11,7 +11,7 @@ public class Plunger : MonoBehaviour
 
     private void Start()
     {
-        pinball = FindObjectOfType<Dependencies>().pinball;
+        pinball = FindObjectOfType<Dependencies>().Pinball;
     }
 
     private void Update()

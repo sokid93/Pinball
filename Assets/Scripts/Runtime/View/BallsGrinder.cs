@@ -8,7 +8,7 @@ public class BallsGrinder : MonoBehaviour
 
     private void Start()
     {
-        BallsManager = FindObjectOfType<Dependencies>().ballsManager;
+        BallsManager = FindObjectOfType<Dependencies>().BallsManager;
     }
 
     private void OnTriggerEnter(Collider other)
