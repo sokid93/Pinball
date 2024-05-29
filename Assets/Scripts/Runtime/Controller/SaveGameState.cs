@@ -20,5 +20,5 @@ public class SaveGameState
 public interface GameRepository
 {
     void SaveGameState(Pinball pinball);
-    void LoadGameState();
+    Pinball LoadGameState();
 }

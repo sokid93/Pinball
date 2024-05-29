@@ -61,4 +61,10 @@ public class Pinball
             return BallsRemaining == 0;
         else return false;
     }
+
+    public void SetFromOtherGameState(int ballsAvailables, int score)
+    {
+        BallsRemaining = ballsAvailables;
+        Score = score;
+    }
 }
