@@ -98,10 +98,11 @@ public class DomainTests
         Assert.AreEqual(pinball.BallsRemaining, new Pinball().BallsRemaining);
     }
     [Test]
-    public void ReleaseBallDecreasesBallsRemaining()
+    public void LosingBallDecreasesBallsRemaining()
     {
         Pinball pinball = new Pinball(3);
         pinball.ReleaseBall();
+        pinball.LoseBall();
         Assert.AreEqual(2, pinball.BallsRemaining);
     }
 }
