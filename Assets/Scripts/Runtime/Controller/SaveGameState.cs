@@ -21,4 +21,5 @@ public interface GameRepository
 {
     void SaveGameState(Pinball pinball);
     Pinball LoadGameState();
+    void ClearSavedState();
 }

@@ -19,4 +19,9 @@ public class LoadGameState
         Pinball.SetFromOtherGameState(loadedGameState.BallsRemaining, loadedGameState.Score);
         ScoreDisplay.DisplayPoints(Pinball.Score);
     }
+
+    public void ClearSavedState()
+    {
+        Repository.ClearSavedState();
+    }
 }

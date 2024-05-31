@@ -16,4 +16,9 @@ public class PlayerPrefsRepository : GameRepository
         PlayerPrefs.SetInt("BallsRemaining", pinball.BallsRemaining);
         PlayerPrefs.SetInt("Score", pinball.Score);
     }
+
+    public void ClearSavedState()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
