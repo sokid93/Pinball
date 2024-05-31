@@ -7,6 +7,8 @@ public class Dependencies : MonoBehaviour
     public Pinball Pinball;
     public ScoreController ScoreController { private set; get; }
     public BallsManager BallsManager { private set; get; }
+    public SaveGameState SaveGame { get; set; }
+    public LoadGameState LoadGame { get; set; }
 
 
     private void Awake()
@@ -16,5 +18,9 @@ public class Dependencies : MonoBehaviour
         ScoreController = new ScoreController(Pinball, pointsDisplay);
         HandleBall handleBall = FindObjectOfType<BallsDispenser>();
         BallsManager = new BallsManager(Pinball, handleBall);
+
+        PlayerPrefsRepository repository = new();
+        SaveGame = new SaveGameState(repository, Pinball);
+        LoadGame = new LoadGameState(repository, Pinball, pointsDisplay);
     }
 }
