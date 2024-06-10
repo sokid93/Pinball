@@ -5,7 +5,6 @@ using UnityEngine;
 public class Plunger : MonoBehaviour
 {
     private Pinball pinball;
-    private bool isCharging = false;
     private float chargedForce = 0f;
     private Rigidbody ballRigidbody;
 
@@ -16,22 +15,25 @@ public class Plunger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isCharging = true;
-            chargedForce = 0f;
-        }
-
-        if (Input.GetKey(KeyCode.Space) && isCharging)
+        if (KeepSpacePressed())
         {
             ChargePlunger();
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) && isCharging)
+        if (ReleaseSpace())
         {
-            isCharging = false;
             LaunchBall(ballRigidbody);
         }
+    }
+
+    private static bool ReleaseSpace()
+    {
+        return Input.GetKeyUp(KeyCode.Space);
+    }
+
+    private static bool KeepSpacePressed()
+    {
+        return Input.GetKey(KeyCode.Space);
     }
 
     private void OnTriggerEnter(Collider other)
