@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LauncherDoor : MonoBehaviour
 {
-    GameObject Door;
+    [SerializeField] GameObject Door;
 
     private void OnTriggerExit(Collider other)
     {
@@ -16,7 +16,7 @@ public class LauncherDoor : MonoBehaviour
         Door.SetActive(true);
     }
 
-    private void OpenLauncherDoor()
+    public void OpenLauncherDoor()
     {
         Door.SetActive(false);
     }

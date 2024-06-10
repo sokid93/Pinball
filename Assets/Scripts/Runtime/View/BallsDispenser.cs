@@ -8,10 +8,12 @@ public class BallsDispenser : MonoBehaviour, HandleBall
     [SerializeField] GameObject BallSpawner;
     [SerializeField] GameObject GameOverPanel;
     BallsManager BallsManager;
+    LauncherDoor LauncherDoor;
 
     private void Start()
     {
         BallsManager = FindObjectOfType<Dependencies>().BallsManager;
+        LauncherDoor = FindObjectOfType<LauncherDoor>();
     }
 
     private void Update()
@@ -35,6 +37,7 @@ public class BallsDispenser : MonoBehaviour, HandleBall
     {
         GameObject lostBall = GameObject.FindGameObjectWithTag("Ball");
         Destroy(lostBall);
+        LauncherDoor.OpenLauncherDoor();
     }
 
     public void GameOver()
