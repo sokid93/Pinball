@@ -61,9 +61,7 @@ public class Pinball
 
     public bool GameOver()
     {
-        if(!HasBallInPlay)
-            return BallsRemaining == 0;
-        else return false;
+        return BallsRemaining == 0;
     }
 
     public void SetFromOtherGameState(int ballsAvailables, int score)
