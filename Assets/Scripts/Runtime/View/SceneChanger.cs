@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    [SerializeField] int NextSceneId;
+
     private void OnTriggerEnter(Collider other)
     {
         SaveGameState();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(NextSceneId);
     }
 
     private void SaveGameState() => FindObjectOfType<Dependencies>().SaveGame.Run();
