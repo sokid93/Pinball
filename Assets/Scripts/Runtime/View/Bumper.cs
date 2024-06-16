@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bumper : MonoBehaviour
 {
     Pinball pinball;
-    ScoreController scoreController;
+    EarnPoints scoreController;
 
     private void Start()
     {
@@ -24,6 +24,6 @@ public class Bumper : MonoBehaviour
     private void BumpBall(Collision collision)
     {
         collision.gameObject.GetComponent<Rigidbody>().AddExplosionForce(pinball.BumpForce, collision.contacts[0].point, 2f, 0f, ForceMode.VelocityChange);
-        scoreController.EarnPoints(10);
+        scoreController.Earn(10);
     }
 }

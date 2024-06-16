@@ -5,7 +5,7 @@ using UnityEngine;
 public class Dependencies : MonoBehaviour
 {
     public Pinball Pinball;
-    public ScoreController ScoreController { private set; get; }
+    public EarnPoints ScoreController { private set; get; }
     public BallsManager BallsManager { private set; get; }
     public SaveGameState SaveGame { get; set; }
     public LoadGameState LoadGame { get; set; }
@@ -14,8 +14,8 @@ public class Dependencies : MonoBehaviour
     private void Awake()
     {
         Pinball = new Pinball(3);
-        UpdateScore pointsDisplay = FindObjectOfType<ScorePanel>();
-        ScoreController = new ScoreController(Pinball, pointsDisplay);
+        UpdateScore pointsDisplay = FindObjectOfType<TextualScore>();
+        ScoreController = new EarnPoints(Pinball, pointsDisplay);
         HandleBall handleBall = FindObjectOfType<BallsDispenser>();
         BallsManager = new BallsManager(Pinball, handleBall);
 
