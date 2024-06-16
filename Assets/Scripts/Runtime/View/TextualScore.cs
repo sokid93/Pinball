@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextualScore : MonoBehaviour, UpdateScore
+public class TextualBallsCounter : MonoBehaviour, UpdateScore
 {
     [SerializeField] Text ScoreText;
     Pinball Pinball;
@@ -26,7 +26,7 @@ public class TextualScore : MonoBehaviour, UpdateScore
 
     public void DisplayPoints(int points)
     {
-        ScoreText.text = points.ToString();
+        ScoreText.text ="Score: " + points.ToString();
     }
 
 }

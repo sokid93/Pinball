@@ -22,7 +22,7 @@ public class Plunger : MonoBehaviour
 
         if (ReleaseSpace())
         {
-            LaunchBall(ballRigidbody);
+            Launch(ballRigidbody);
         }
     }
 
@@ -64,7 +64,7 @@ public class Plunger : MonoBehaviour
         }
     }
 
-    private void LaunchBall(Rigidbody ballRigidbody)
+    private void Launch(Rigidbody ballRigidbody)
     {
         if (ballRigidbody != null)
         {
