@@ -2,18 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallsDispenser : MonoBehaviour, HandleBall
+public class BallsDispenser : MonoBehaviour
 {
-    [SerializeField] GameObject Ball;
-    [SerializeField] GameObject BallSpawner;
-    [SerializeField] GameObject GameOverPanel;
     BallsManager BallsManager;
-    LauncherDoor LauncherDoor;
 
     private void Start()
     {
         BallsManager = FindObjectOfType<Dependencies>().BallsManager;
-        LauncherDoor = FindObjectOfType<LauncherDoor>();
     }
 
     private void Update()
@@ -22,22 +17,5 @@ public class BallsDispenser : MonoBehaviour, HandleBall
         {
             BallsManager.ReleaseBall();
         }
-    }
-
-    public void ReleaseBall()
-    {
-        Instantiate(Ball, BallSpawner.transform.position, Quaternion.identity);
-    }
-
-    public void LoseBall()
-    {
-        GameObject lostBall = GameObject.FindGameObjectWithTag("Ball");
-        Destroy(lostBall);
-        LauncherDoor.OpenLauncherDoor();
-    }
-
-    public void GameOver()
-    {
-        GameOverPanel.SetActive(true);
     }
 }

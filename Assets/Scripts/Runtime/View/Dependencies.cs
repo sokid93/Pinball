@@ -16,7 +16,7 @@ public class Dependencies : MonoBehaviour
         Pinball = new Pinball(3);
         UpdateScore pointsDisplay = FindObjectOfType<TextualBallsCounter>();
         ScoreController = new EarnPoints(Pinball, pointsDisplay);
-        HandleBall handleBall = FindObjectOfType<BallsDispenser>();
+        HandleBall handleBall = FindObjectOfType<BallsHandler>();
         BallsManager = new BallsManager(Pinball, handleBall);
 
         PlayerPrefsRepository repository = new();

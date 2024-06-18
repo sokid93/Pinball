@@ -649,9 +649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed3c15ec016c54488d6d422d8a41506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ball: {fileID: 7124191362186378237, guid: 4f2e87b605828d54889b8d7410af13cf, type: 3}
-  BallSpawner: {fileID: 112284983}
-  GameOverPanel: {fileID: 176979377}
 --- !u!1 &127105624
 GameObject:
   m_ObjectHideFlags: 0
@@ -4616,6 +4613,7 @@ Transform:
   - {fileID: 112284984}
   - {fileID: 546366656}
   - {fileID: 1596759477}
+  - {fileID: 2104880273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -15, y: 0, z: 0}
 --- !u!1 &963194225
@@ -7571,6 +7569,53 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2104880272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2104880273}
+  - component: {fileID: 2104880274}
+  m_Layer: 0
+  m_Name: BallsHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2104880273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104880272}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 916323246}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2104880274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104880272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1bfaae92f79b64bb5cb76ad7e3fca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ball: {fileID: 7124191362186378237, guid: 4f2e87b605828d54889b8d7410af13cf, type: 3}
+  BallSpawner: {fileID: 112284983}
+  GameOverPanel: {fileID: 176979377}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
