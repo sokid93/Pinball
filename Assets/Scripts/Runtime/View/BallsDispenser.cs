@@ -22,10 +22,6 @@ public class BallsDispenser : MonoBehaviour, HandleBall
         {
             BallsManager.ReleaseBall();
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            BallsManager.LoseBall();
-        }
     }
 
     public void ReleaseBall()
