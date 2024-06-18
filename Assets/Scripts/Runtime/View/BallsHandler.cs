@@ -5,12 +5,14 @@ using UnityEngine;
 public class BallsHandler : MonoBehaviour, HandleBall
 {
     [SerializeField] GameObject Ball;
-    [SerializeField] GameObject BallSpawner;
-    [SerializeField] GameObject GameOverPanel;
+    BallsDispenser BallSpawner;
+    GameOverPanel GameOverPanel;
     LauncherDoor LauncherDoor;
 
     private void Start()
     {
+        BallSpawner = FindObjectOfType<BallsDispenser>();
+        GameOverPanel = FindObjectOfType<GameOverPanel>();
         LauncherDoor = FindObjectOfType<LauncherDoor>();
     }
 
@@ -28,6 +30,6 @@ public class BallsHandler : MonoBehaviour, HandleBall
 
     public void GameOver()
     {
-        GameOverPanel.SetActive(true);
+        GameOverPanel.Activate();
     }
 }

@@ -7410,8 +7410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ball: {fileID: 7124191362186378237, guid: 4f2e87b605828d54889b8d7410af13cf, type: 3}
-  BallSpawner: {fileID: 112284983}
-  GameOverPanel: {fileID: 1039692357}
 --- !u!1 &189825561
 GameObject:
   m_ObjectHideFlags: 0
@@ -10196,7 +10194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &842614516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10575,13 +10573,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1039692358}
+  - component: {fileID: 1039692359}
   m_Layer: 0
   m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1039692358
 Transform:
   m_ObjectHideFlags: 0
@@ -10598,6 +10597,18 @@ Transform:
   - {fileID: 842614516}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1039692359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039692357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a36c75e1fcc08b4ab40b3b4fc6e3f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1286438777
 GameObject:
   m_ObjectHideFlags: 0
