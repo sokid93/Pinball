@@ -52,11 +52,12 @@ public class Pinball
         {
             throw new InvalidOperationException("No puedes perder una bola porque no te queda ninguna");
         }
-        if (HasBallInPlay) 
+        if (!HasBallInPlay)
         {
-            HasBallInPlay = false;
-            BallsRemaining -= 1;
-        }   
+            throw new InvalidOperationException("No puedes perder bola si no hay bola en juego");
+        }
+        HasBallInPlay = false;
+        BallsRemaining -= 1;
     }
 
     public bool GameOver()

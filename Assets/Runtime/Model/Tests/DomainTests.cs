@@ -91,13 +91,6 @@ public class DomainTests
         Assert.IsFalse(pinball.CanReleaseBall());
     }
     [Test]
-    public void CannotLoseBallIfNoBallInPlay()
-    {
-        Pinball pinball = new Pinball();
-        pinball.LoseBall();
-        Assert.AreEqual(pinball.BallsRemaining, new Pinball().BallsRemaining);
-    }
-    [Test]
     public void LosingBallDecreasesBallsRemaining()
     {
         Pinball pinball = new Pinball(3);

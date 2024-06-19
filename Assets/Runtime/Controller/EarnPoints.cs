@@ -1,17 +1,17 @@
 public class EarnPoints
 {
     private readonly Pinball Pinball;
-    private readonly UpdateScore UpdateScore;
+    private readonly UpdateScore x;
 
     public EarnPoints(Pinball pinball, UpdateScore updateScore)
     {
         this.Pinball = pinball;
-        this.UpdateScore = updateScore;
+        this.x = updateScore;
     }
 
     public void Earn(int points)
     {
         Pinball.AddPoints(points);
-        UpdateScore.DisplayPoints(Pinball.Score);
+        x.DisplayPoints(Pinball.Score);
     }
 }
