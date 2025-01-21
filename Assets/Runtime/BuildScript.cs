@@ -6,14 +6,12 @@ public class BuildScript
 {
     public static void PerformBuild()
     {
-        string buildPath = "Builds";
-        if (!System.IO.Directory.Exists(buildPath))
-        {
-            System.IO.Directory.CreateDirectory(buildPath);
-        }
+        BuildPlayerOptions buildOptions = new BuildPlayerOptions();
+        buildOptions.locationPathName = "Builds";
+        buildOptions.scenes = new string[] { "Assets/SampleScene.unity", "Assets/SecondLevel.unity", "Assets/ThirdLevelA.unity", "Assets/ThirdLevelB.unity" };
+        buildOptions.target = BuildTarget.StandaloneWindows;
+        buildOptions.options = BuildOptions.None;
 
-        string[] scenes = new string[] { "Assets/SampleScene.unity", "Assets/SecondLevel.unity", "Assets/ThirdLevelA.unity", "Assets/ThirdLevelB.unity" };
-
-        BuildPipeline.BuildPlayer(scenes, buildPath + "/Pinball.exe", BuildTarget.StandaloneWindows, BuildOptions.None);
+        BuildPipeline.BuildPlayer(buildOptions);
     }
 }
