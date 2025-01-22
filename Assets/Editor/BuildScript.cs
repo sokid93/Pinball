@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class BuildScript
 {
+    [MenuItem("Build/Build WebGL")]
     public static void PerformBuild()
     {
         BuildPlayerOptions buildOptions = new BuildPlayerOptions();
